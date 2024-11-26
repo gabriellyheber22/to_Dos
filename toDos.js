@@ -16,7 +16,7 @@ function renderTodos(){
         toDoElement.appendChild(linkElement);
         linkElement.appendChild(linkText);
         let posicaoArray = toDos.indexOf(toDo); //Retorna o valor do indice (posição) onde o elemento referenciado esta localizado no array
-        linkElement.setAttribute('onclick', 'deleteTodo('+posicaoArray +')');
+        linkElement.setAttribute('onclick', 'deleteTodo('+ posicaoArray +')');
     }
 }
 renderTodos();
