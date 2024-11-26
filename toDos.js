@@ -5,12 +5,19 @@ let toDos = ['Fazer café', 'Estudar JavaScript', 'Acessar comunidade da Rockets
 
 function renderTodos(){
     listElements.innerText ='';
-    for(let todo of toDos){
+    for(let toDo of toDos){
         let toDoElement = document.createElement('li');
-        let toDoText = document.createTextNode(todo);
+        let toDoText = document.createTextNode(toDo);
+        let linkElement = document.createElement('a');
+        linkElement.setAttribute('href', '#');
+        let linkText = document.createTextNode('Excluir');
         toDoElement.appendChild(toDoText);
         listElements.appendChild(toDoElement);
+        toDoElement.appendChild(linkElement);
+        linkElement.appendChild(linkText);
 
+        let posicaoArray = toDos.indexOf(toDo);
+        linkElement.setAttribute('onclick', 'deleteTodo('+posicaoArray +')');
     }
 }
 renderTodos();
@@ -23,3 +30,9 @@ function AdicionaToDos(){
 }
 
 btnElements.onclick = AdicionaToDos;
+
+function deleteTodo(pos){
+    toDos.splice(pos,1);
+    renderTodos();
+
+}
