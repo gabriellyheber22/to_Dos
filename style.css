@@ -7,6 +7,7 @@
     --btn-font:rgb(245, 59, 90); 
     --btn-borda:rgb(255, 169, 183);
     --btn-fundo:rgb(255, 190, 202);
+    --verde:  #e1faf2;
     --branco: #fffafa;
     --font-padrão: "Edu AU VIC WA NT Pre", cursive;
 }
@@ -32,7 +33,7 @@ body{
     min-height: 300px;
     max-height: auto;
     padding: 3em 1em 1em ;
-    background-color: #e1faf2;
+    background-color:var(--verde);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,6 +41,7 @@ body{
     border-radius: 20px;
     box-sizing: border-box;
     font-family: var(--font-padrão);
+    box-shadow: 1px 1px 3px rgb(105, 105, 105);
     
    
 }
@@ -68,7 +70,7 @@ li{
 
 #inputTarefa{
     padding: 0.8em;
-    border: 1px solid rgb(255, 169, 183);
+    border: 1px solid var(--btn-borda);
     border-radius: 5px;
     font-family: var(--font-padrão);
     
