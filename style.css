@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@1,6..12,200..1000&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+:root{
+    --roxo: rgb(150, 86, 211) ;
+    --btn-font:rgb(245, 59, 90); 
+    --btn-borda:rgb(255, 169, 183);
+    --btn-fundo:rgb(255, 190, 202);
+    --branco: #fffafa;
+    --font-padrão: "Edu AU VIC WA NT Pre", cursive;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./imagem/textura-rosa.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+#App{
+    width: 30%;
+    min-height: 300px;
+    max-height: auto;
+    padding: 3em 1em 1em ;
+    background-color: #e1faf2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-family: var(--font-padrão);
+    
+   
+}
+
+h1{
+    text-align: center;
+    font-size: 3em;
+    color:var(--btn-font);
+    font-family: "Dancing Script", cursive;
+   
+    
+
+}
+label{
+   
+    color:var(--btn-font);
+    font-family: var(--font-padrão);
+}
+
+
+li{
+    text-align: center;
+    list-style-type: none;
+    color: var(--btn-font);
+}
+
+#inputTarefa{
+    padding: 0.8em;
+    border: 1px solid rgb(255, 169, 183);
+    border-radius: 5px;
+    font-family: var(--font-padrão);
+    
+   
+}
+#inputTarefa:focus{
+    border: 2px solid var(--btn-font);
+    outline: none;
+}
+#btn{
+    border: 1px solid var(--btn-borda);
+    background-color: var(--btn-fundo);
+    text-align: center;
+    border-radius: 50px;
+    height: 40px;
+    font-family: var(--font-padrão);
+    color: var(--btn-font);
+    letter-spacing: 2px;
+    font-size: 1em;
+}
+#btn:hover{
+    cursor: pointer;
+    border: none;
+    background-color: var(--btn-borda);
+    color:var(--branco); 
+    border: 1px solid var(--btn-borda);
+}
