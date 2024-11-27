@@ -1,22 +1,43 @@
 var listElements = document.querySelector('#App ul');
-let inputElements = document.querySelector('#App input');
+let inputElements = document.getElementById('inputTarefa');
 let btnElements = document.querySelector('#App button');
-let toDos = JSON.parse (localStorage.getItem('list_todo')) || []; //Inicialização padrão, converte os itens armazenados na localStorage para array ou se o local Storage estiver vazio, ele apresenta o array vazio
+var toDos = JSON.parse(localStorage.getItem('list_todo')) || []; //Inicialização padrão, converte os itens armazenados na localStorage para array ou se o local Storage estiver vazio, ele apresenta o array vazio
+let contadorId = 0;
 
 function renderTodos(){
+    //contadorId++;
+    ; 
     listElements.innerText ='';
     for(let toDo of toDos){ //Visualizando os itens do array "toDo é o valor do array" e "toDos é o array"
-        let toDoElement = document.createElement('li');
+        let posicaoArray = toDos.indexOf(toDo);
+        console.log(toDo);
         let toDoText = document.createTextNode(toDo);
-        let linkElement = document.createElement('a');
-        linkElement.setAttribute('href', '#');
-        let linkText = document.createTextNode('Excluir');
-        toDoElement.appendChild(toDoText);
+        
+
+        let toDoElement = document.createElement('input');//Cria Input 
+        toDoElement.setAttribute('type', 'checkbox'); //Atribui type:CheckBox
+        toDoElement.setAttribute('id', 'check'+posicaoArray );//Atribui Id ao input
+        toDoElement.setAttribute('name', 'check'+posicaoArray);
+
+        
+        let toDoLabel = document.createElement('label'); //Cria a Label
+        toDoLabel.setAttribute('for', 'check'+posicaoArray) //Informa o ID do Rotulo
+        toDoLabel.appendChild(toDoText);
+
+       
+        
+        
+        
+        
         listElements.appendChild(toDoElement);
-        toDoElement.appendChild(linkElement);
-        linkElement.appendChild(linkText);
-        let posicaoArray = toDos.indexOf(toDo); //Retorna o valor do indice (posição) onde o elemento referenciado esta localizado no array
-        linkElement.setAttribute('onclick', 'deleteTodo('+ posicaoArray +')');
+        listElements.appendChild(toDoLabel);
+       
+       
+       
+        //Retorna o valor do indice (posição) onde o elemento referenciado esta localizado no array
+        toDoElement.addEventListener('click', function () {
+            deleteTodo(posicaoArray); // Chama a função deleteTodo com a posição do item no array
+        });
     }
 }
 renderTodos();
