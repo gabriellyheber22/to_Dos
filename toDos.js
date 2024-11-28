@@ -62,6 +62,11 @@ function AdicionaToDos() {
 
 btnElements.onclick = AdicionaToDos;
 
+document.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        AdicionaToDos();
+    }
+  });
 function deleteTodo(pos) {
     toDos.splice(pos, 1);
     renderTodos();
