@@ -4,10 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 :root{
     --roxo: rgb(150, 86, 211) ;
-    --btn-font:rgb(245, 59, 90); 
+    --btn-font:#f53b5a; 
     --btn-borda:rgb(255, 169, 183);
     --btn-fundo:rgb(255, 190, 202);
-    --verde:  #e1faf2;
+    --azul-bebe:  #bfddf3;
     --branco: #fffafa;
     --font-padrão: "Edu AU VIC WA NT Pre", cursive;
 }
@@ -33,7 +33,7 @@ body{
     min-height: 300px;
     max-height: auto;
     padding: 3em 1em 1em ;
-    background-color:var(--verde);
+    background-color:var(--azul-bebe);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,18 +61,41 @@ label{
     font-family: var(--font-padrão);
 }
 
-
-li{
-    text-align: center;
-    list-style-type: none;
-    color: var(--btn-font);
+#lista{     
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    
 }
+.listaItem input{
+    
+    display: none;
+}
+
+.listaItem input + label:before{
+    content: '';
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--btn-borda);
+    border-radius: 4px;
+    vertical-align: middle;
+    background-color: var(--branco);
+    margin-right: 1em;
+    display:inline-block;
+}
+
+.listaItem input:checked + label:before{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='rgb(245, 59, 90)'%3E%3Cpath d='M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z'/%3E%3C/svg%3E");
+    background-position: center;
+}
+
 
 #inputTarefa{
     padding: 0.8em;
     border: 1px solid var(--btn-borda);
     border-radius: 5px;
     font-family: var(--font-padrão);
+    color: var(--btn-font);
     
    
 }
@@ -96,5 +119,23 @@ li{
     border: none;
     background-color: var(--btn-borda);
     color:var(--branco); 
+    border: 1px solid var(--btn-borda);
+}
+#btn-Excluir{
+    border: 1px solid var(--btn-borda);
+    background-color:rgb(255, 227, 233);
+    text-align: center;
+    border-radius: 50px;
+    height: 40px;
+    font-family: var(--font-padrão);
+    color: var(--btn-font);
+    letter-spacing: 2px;
+    font-size: 1em;
+}
+#btn-Excluir:hover{
+    cursor: pointer;
+    border: none;
+    background-color: var(--btn-borda);
+    color:rgb(255, 227, 233); 
     border: 1px solid var(--btn-borda);
 }
