@@ -35,29 +35,31 @@ function renderTodos() {
         elements.appendChild(quebraLinha);
         listElements.appendChild(elements);
 
-
-
-
-
-
-
-        //Retorna o valor do indice (posição) onde o elemento referenciado esta localizado no array
-        // toDoElement.addEventListener('click', function () {
-        //  deleteTodo(posicaoArray); // Chama a função deleteTodo com a posição do item no array
-        //});
     }
 
 
 
 }
 renderTodos();
-
+function validaForm(){
+    
+}
 function AdicionaToDos() {
-    let toDoText = inputElements.value;
-    toDos.push(toDoText);
-    inputElements.value = '';
-    renderTodos();
-    saveStorage();
+
+    if(inputElements.value == ''){
+        alert('O campo de Tarefa esta vazio');
+        inputElements.style.borderColor ='red';
+        inputElements.focus();
+        return true;
+    }else{
+        let toDoText = inputElements.value;
+        toDos.push(toDoText);
+        inputElements.value = '';
+        renderTodos();
+        saveStorage(); 
+    }
+    
+    
 }
 
 btnElements.onclick = AdicionaToDos;
