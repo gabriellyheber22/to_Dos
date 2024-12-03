@@ -9,6 +9,7 @@ function renderTodos() {
 
     listElements.innerText = '';
     for (let toDo of toDos) { //Visualizando os itens do array "toDo é o valor do array" e "toDos é o array"
+        
         let posicaoArray = toDos.indexOf(toDo);
         let toDoText = document.createTextNode(toDo);
 
@@ -50,13 +51,17 @@ function AdicionaToDos() {
         alert('O campo de Tarefa esta vazio');
         inputElements.style.borderColor ='red';
         inputElements.focus();
-        return true;
+        
     }else{
         let toDoText = inputElements.value;
-        toDos.push(toDoText);
-        inputElements.value = '';
-        renderTodos();
-        saveStorage(); 
+        
+                toDos.push(toDoText);
+                inputElements.value = '';
+                renderTodos();
+                saveStorage(); 
+                
+            
+        
     }
     
     

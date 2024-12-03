@@ -14,22 +14,26 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100%;
     background-image: url(./imagem/textura-rosa.jpg);
     background-size:cover;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
+    overflow-x:hidden;
    
 }
 
 #App{
-    width: 30%;
+    width: 40vw;
     min-height: 300px;
     max-height: auto;
     padding: 3em 1em 1em ;
@@ -42,6 +46,7 @@ body{
     box-sizing: border-box;
     font-family: var(--font-padrão);
     box-shadow: 1px 1px 3px rgb(105, 105, 105);
+    
     
    
 }
@@ -138,4 +143,12 @@ label{
     background-color: var(--btn-borda);
     color:rgb(255, 227, 233); 
     border: 1px solid var(--btn-borda);
+}
+
+@media screen and (max-width: 800px){
+    #App{
+        min-width: 90vw;
+        height: auto;
+    }
+
 }
